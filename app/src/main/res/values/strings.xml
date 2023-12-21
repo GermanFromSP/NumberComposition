@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Number composition</string>
+    <string name="game_rules">Даны два числа. Необходимо, чтобы сумма чисел из двух нижних фигур была равна числу в верхней фигуре. Например: </string>
+    <string name="rules_first_element">Правила игры :</string>
+    <string name="rules_second_element">перед вами будет три фигуры - две снизу</string>
+    <string name="rules_third_element">и одна сверху, в двух из них будут числа. Необходимо, чтобы сумма чисел из двух нижних фигур была равна числу в верхней фигуре.</string>
+    <string name="progress_answers">Правильных ответов %s (минимум %s)</string>
+    <string name="restart">Попробовать снова</string>
+    <string name="users_right_answers">Ваш счет: %s</string>
+    <string name="min_right_answers">Необходимый счет: %S</string>
+    <string name="result">Результат:</string>
 </resources>
