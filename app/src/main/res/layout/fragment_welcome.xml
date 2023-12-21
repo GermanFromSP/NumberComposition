@@ -67,9 +67,11 @@
             android:id="@+id/ivLogo"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:layout_marginTop="64dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvLogoComposition"
+            app:layout_constraintVertical_chainStyle="packed"
             app:srcCompat="@drawable/logo" />
 
         <TextView
@@ -87,6 +89,7 @@
             app:layout_constraintEnd_toStartOf="@id/tvLogoNumb"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toTopOf="@id/llMainMenu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
@@ -105,21 +108,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@id/tvLogoComposition"
-            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+            app:layout_constraintTop_toTopOf="@id/tvLogoComposition"
+            app:layout_constraintBottom_toBottomOf="@id/tvLogoComposition"/>
 
         <LinearLayout
-            android:id="@+id/constraintRules"
+            android:id="@+id/llMainMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="100dp"
             android:background="@drawable/bg_text_rule"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLogoComposition">
+            app:layout_constraintTop_toBottomOf="@id/tvLogoComposition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
 
             <Button
+                android:id="@+id/btnChooseLevel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -138,6 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
+                android:id="@+id/btn_game_rules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
