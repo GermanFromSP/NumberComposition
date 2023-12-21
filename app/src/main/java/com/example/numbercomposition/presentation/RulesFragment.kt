@@ -10,7 +10,7 @@ import com.example.numbercomposition.databinding.FragmentRulesBinding
 
 class RulesFragment : Fragment() {
     private var _binding: FragmentRulesBinding? = null
-    private val binding get() = _binding?: throw RuntimeException("FragmentRulesBinding == null")
+    private val binding get() = _binding ?: throw RuntimeException("FragmentRulesBinding == null")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,8 +20,21 @@ class RulesFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnOK.setOnClickListener {
+            fragmentManager?.popBackStack()
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        fun newInstance(): RulesFragment {
+            return RulesFragment()
+        }
     }
 }
