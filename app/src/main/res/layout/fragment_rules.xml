@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/floral_white"
+    tools:context=".presentation.RulesFragment">
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="432dp"
+        android:rotation="-30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mathematical_svgrepo_com" />
+
+    <ImageView
+        android:layout_width="91dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="600dp"
+        android:rotation="-30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/compass_svgrepo_com" />
+
+    <ImageView
+        android:layout_width="154dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:rotation="30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/open_book_svgrepo_com" />
+
+    <ImageView
+        android:layout_width="104dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="196dp"
+        android:rotation="20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/set_square_svgrepo_com" />
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="516dp"
+        android:rotation="30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/math_class_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/tvTitleRules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_text_rule_top"
+        android:fontFamily="@font/fry_pro"
+        android:padding="8dp"
+        android:text="Правила игры:"
+        android:elevation="8dp"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:background="@drawable/bg_text_rule_body"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleRules">
+
+        <TextView
+            android:id="@+id/tvBodyRules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="@string/game_rules" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/example_logo" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ответ: 6"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginBottom="4dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/dialog_holo_dark_frame"
+        android:elevation="8dp"
+        android:fontFamily="@font/fry_pro"
+        android:text="Я все понял!"
+        android:textSize="20sp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

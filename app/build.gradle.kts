@@ -5,7 +5,10 @@ plugins {
 
 android {
     namespace = "com.example.numbercomposition"
-    compileSdk = 33
+    compileSdk = 34
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.numbercomposition"
