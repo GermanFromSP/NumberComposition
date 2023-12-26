@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.numbercomposition.R
 import com.example.numbercomposition.databinding.FragmentGameFinishedBinding
 import com.example.numbercomposition.domain.entity.GameResult
@@ -15,12 +17,7 @@ class GameFinishedFragment : Fragment() {
     private var _binding: FragmentGameFinishedBinding? = null
     private val binding
         get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding == null")
-    private lateinit var gameResult: GameResult
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        parseArgs()
-    }
+    private val args by navArgs<GameFinishedFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,25 +43,18 @@ class GameFinishedFragment : Fragment() {
         binding.btnRestart.setOnClickListener {
             restartGame()
         }
-        requireActivity().onBackPressedDispatcher.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    restartGame()
-                }
-            })
     }
 
     private fun setupResults() {
         with(binding) {
-            if (gameResult.winner) {
+            if (args.gameResult.winner) {
                 ivResult.setImageResource(R.drawable.happy_svgrepo_com)
                 tvCongratulations.setText(R.string.congratulation_happy)
             } else {
                 ivResult.setImageResource(R.drawable.sad_svgrepo_com)
                 tvCongratulations.setText(R.string.congratulation_sad)
             }
-            with(gameResult) {
+            with(args.gameResult) {
                 tvUsersAnswers.text = String.format(
                     getString(R.string.users_right_answers),
                     countOfRightAnswers
@@ -86,7 +76,7 @@ class GameFinishedFragment : Fragment() {
         }
     }
 
-    private fun usersPercent() = with(gameResult) {
+    private fun usersPercent() = with(args.gameResult) {
             if (countOfQuestions == 0) {
                 0
             } else {
@@ -94,28 +84,8 @@ class GameFinishedFragment : Fragment() {
             }
         }
 
-
     private fun restartGame() {
-        fragmentManager?.popBackStack(
-            GameFragment.NAME,
-            FragmentManager.POP_BACK_STACK_INCLUSIVE
-        )
+        findNavController().popBackStack()
     }
 
-    private fun parseArgs() {
-        requireArguments().getParcelable<GameResult>(KEY_RESULT)?.let {
-            gameResult = it
-        }
-    }
-
-    companion object {
-        private const val KEY_RESULT = "result"
-        fun newInstance(result: GameResult): GameFinishedFragment {
-            return GameFinishedFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(KEY_RESULT, result)
-                }
-            }
-        }
-    }
 }
