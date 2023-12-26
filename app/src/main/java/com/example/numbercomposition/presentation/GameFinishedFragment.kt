@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.numbercomposition.R
 import com.example.numbercomposition.databinding.FragmentGameFinishedBinding
 import com.example.numbercomposition.domain.entity.GameResult
 
@@ -15,6 +16,7 @@ class GameFinishedFragment : Fragment() {
     private val binding
         get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding == null")
     private lateinit var gameResult: GameResult
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseArgs()
@@ -32,6 +34,7 @@ class GameFinishedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupOnClickListeners()
+        setupResults()
     }
 
     override fun onDestroyView() {
@@ -52,6 +55,46 @@ class GameFinishedFragment : Fragment() {
             })
     }
 
+    private fun setupResults() {
+        with(binding) {
+            if (gameResult.winner) {
+                ivResult.setImageResource(R.drawable.happy_svgrepo_com)
+                tvCongratulations.setText(R.string.congratulation_happy)
+            } else {
+                ivResult.setImageResource(R.drawable.sad_svgrepo_com)
+                tvCongratulations.setText(R.string.congratulation_sad)
+            }
+            with(gameResult) {
+                tvUsersAnswers.text = String.format(
+                    getString(R.string.users_right_answers),
+                    countOfRightAnswers
+                )
+                tvMinRightAnswers.text = String.format(
+                    getString(R.string.min_right_answers),
+                    gameSettings.minCountOfRightAnswers
+                )
+                tvMinPercentRightAnswers.text = String.format(
+                    getString(R.string.min_right_percent),
+                    gameSettings.minPercentOfRightAnswers
+                )
+                tvUsersPercentAnswers.text = String.format(
+                    getString(R.string.users_right_percent),
+                    usersPercent()
+                )
+            }
+
+        }
+    }
+
+    private fun usersPercent() = with(gameResult) {
+            if (countOfQuestions == 0) {
+                0
+            } else {
+                ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
+            }
+        }
+
+
     private fun restartGame() {
         fragmentManager?.popBackStack(
             GameFragment.NAME,
@@ -60,7 +103,7 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun parseArgs() {
-        requireArguments().getParcelable<GameResult>(KEY_RESULT)?.let { 
+        requireArguments().getParcelable<GameResult>(KEY_RESULT)?.let {
             gameResult = it
         }
     }
