@@ -7,6 +7,10 @@
     <string name="progress_answers">Правильных ответов %s (минимум %s)</string>
     <string name="restart">Попробовать снова</string>
     <string name="users_right_answers">Ваш счет: %s</string>
-    <string name="min_right_answers">Необходимый счет: %S</string>
+    <string name="users_right_percent">Ваш процент: %s</string>
+    <string name="min_right_answers">Мин. счет: %S</string>
+    <string name="min_right_percent">Мин. процент: %S</string>
     <string name="result">Результат:</string>
+    <string name="congratulation_happy">Поздравляем!</string>
+    <string name="congratulation_sad">Может, в другой раз…</string>
 </resources>
