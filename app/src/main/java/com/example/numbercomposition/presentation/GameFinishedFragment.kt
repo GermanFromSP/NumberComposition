@@ -31,12 +31,7 @@ class GameFinishedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupOnClickListeners()
-        setupResults()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        binding.gameResult = args.gameResult
     }
 
     private fun setupOnClickListeners() {
@@ -45,48 +40,12 @@ class GameFinishedFragment : Fragment() {
         }
     }
 
-    private fun setupResults() {
-        binding.gameResult = args.gameResult
-        with(binding) {
-            if (args.gameResult.winner) {
-                ivResult.setImageResource(R.drawable.happy_svgrepo_com)
-                tvCongratulations.setText(R.string.congratulation_happy)
-            } else {
-                ivResult.setImageResource(R.drawable.sad_svgrepo_com)
-                tvCongratulations.setText(R.string.congratulation_sad)
-            }
-            with(args.gameResult) {
-//                tvUsersAnswers.text = String.format(
-//                    getString(R.string.users_right_answers),
-//                    countOfRightAnswers
-//                )
-//                tvMinRightAnswers.text = String.format(
-//                    getString(R.string.min_right_answers),
-//                    gameSettings.minCountOfRightAnswers
-//                )
-//                tvMinPercentRightAnswers.text = String.format(
-//                    getString(R.string.min_right_percent),
-//                    gameSettings.minPercentOfRightAnswers
-//                )
-                tvUsersPercentAnswers.text = String.format(
-                    getString(R.string.users_right_percent),
-                    usersPercent()
-                )
-            }
-
-        }
-    }
-
-    private fun usersPercent() = with(args.gameResult) {
-            if (countOfQuestions == 0) {
-                0
-            } else {
-                ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
-            }
-        }
-
     private fun restartGame() {
         findNavController().popBackStack()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
