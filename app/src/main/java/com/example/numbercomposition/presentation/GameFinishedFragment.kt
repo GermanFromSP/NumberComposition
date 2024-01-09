@@ -46,6 +46,7 @@ class GameFinishedFragment : Fragment() {
     }
 
     private fun setupResults() {
+        binding.gameResult = args.gameResult
         with(binding) {
             if (args.gameResult.winner) {
                 ivResult.setImageResource(R.drawable.happy_svgrepo_com)
@@ -55,18 +56,18 @@ class GameFinishedFragment : Fragment() {
                 tvCongratulations.setText(R.string.congratulation_sad)
             }
             with(args.gameResult) {
-                tvUsersAnswers.text = String.format(
-                    getString(R.string.users_right_answers),
-                    countOfRightAnswers
-                )
-                tvMinRightAnswers.text = String.format(
-                    getString(R.string.min_right_answers),
-                    gameSettings.minCountOfRightAnswers
-                )
-                tvMinPercentRightAnswers.text = String.format(
-                    getString(R.string.min_right_percent),
-                    gameSettings.minPercentOfRightAnswers
-                )
+//                tvUsersAnswers.text = String.format(
+//                    getString(R.string.users_right_answers),
+//                    countOfRightAnswers
+//                )
+//                tvMinRightAnswers.text = String.format(
+//                    getString(R.string.min_right_answers),
+//                    gameSettings.minCountOfRightAnswers
+//                )
+//                tvMinPercentRightAnswers.text = String.format(
+//                    getString(R.string.min_right_percent),
+//                    gameSettings.minPercentOfRightAnswers
+//                )
                 tvUsersPercentAnswers.text = String.format(
                     getString(R.string.users_right_percent),
                     usersPercent()
