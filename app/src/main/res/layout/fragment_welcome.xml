@@ -1,178 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:orientation="vertical">
+<layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/floral_white"
-        tools:context=".presentation.WelcomeFragment">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="126dp"
-            android:layout_marginStart="248dp"
-            android:layout_marginTop="516dp"
-            android:rotation="30"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/math_class_svgrepo_com" />
-
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="133dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="432dp"
-            android:rotation="-30"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mathematical_svgrepo_com" />
-
-        <ImageView
-            android:layout_width="91dp"
-            android:layout_height="99dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginTop="600dp"
-            android:rotation="-30"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/compass_svgrepo_com" />
-
-        <ImageView
-            android:layout_width="154dp"
-            android:layout_height="139dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
-            android:rotation="30"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/open_book_svgrepo_com" />
-
-        <ImageView
-            android:layout_width="104dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="224dp"
-            android:layout_marginTop="196dp"
-            android:rotation="20"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/set_square_svgrepo_com" />
-
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvLogoComposition"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:srcCompat="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/tvLogoComposition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/bg_text_title_left"
-            android:fontFamily="@font/fry_pro"
-            android:text="Состав"
-            android:elevation="8dp"
-            android:textAlignment="viewEnd"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/tvLogoNumb"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintBottom_toTopOf="@id/llMainMenu"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
-
-        <TextView
-            android:id="@+id/tvLogoNumb"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_text_title_right"
-            android:fontFamily="@font/fry_pro"
-            android:text="Числа"
-            android:elevation="8dp"
-            android:textColor="@android:color/holo_blue_light"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/tvLogoComposition"
-            app:layout_constraintTop_toTopOf="@id/tvLogoComposition"
-            app:layout_constraintBottom_toBottomOf="@id/tvLogoComposition"/>
-
-        <LinearLayout
-            android:id="@+id/llMainMenu"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="100dp"
-            android:background="@drawable/bg_text_rule"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLogoComposition"
-            app:layout_constraintBottom_toBottomOf="parent"
-            >
+            android:background="@color/floral_white"
+            tools:context=".presentation.WelcomeFragment">
 
-            <Button
-                android:id="@+id/btnChooseLevel"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="126dp"
+                android:layout_marginStart="248dp"
+                android:layout_marginTop="516dp"
+                android:rotation="30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/math_class_svgrepo_com" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="133dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="432dp"
+                android:rotation="-30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mathematical_svgrepo_com" />
+
+            <ImageView
+                android:layout_width="91dp"
+                android:layout_height="99dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="600dp"
+                android:rotation="-30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/compass_svgrepo_com" />
+
+            <ImageView
+                android:layout_width="154dp"
+                android:layout_height="139dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:rotation="30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/open_book_svgrepo_com" />
+
+            <ImageView
+                android:layout_width="104dp"
+                android:layout_height="101dp"
+                android:layout_marginStart="224dp"
+                android:layout_marginTop="196dp"
+                android:rotation="20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/set_square_svgrepo_com" />
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toTopOf="@id/tvLogoComposition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/tvLogoComposition"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="8dp"
-                android:background="@android:drawable/dialog_holo_dark_frame"
-                android:backgroundTintMode="multiply"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/bg_text_title_left"
                 android:elevation="8dp"
                 android:fontFamily="@font/fry_pro"
-                android:padding="16dp"
-                android:text="Попробовать свои силы!"
-                android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="Состав"
+                android:textAlignment="viewEnd"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/llMainMenu"
+                app:layout_constraintEnd_toStartOf="@id/tvLogoNumb"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
-            <Button
-                android:id="@+id/btn_game_rules"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvLogoNumb"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="16dp"
-                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_text_title_right"
                 android:elevation="8dp"
                 android:fontFamily="@font/fry_pro"
-                android:padding="16dp"
-                android:text="Правила игры"
-                android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Числа"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvLogoComposition"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </LinearLayout>
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/tvLogoComposition"
+                app:layout_constraintTop_toTopOf="@id/tvLogoComposition" />
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="224dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/pngwing" />
+            <LinearLayout
+                android:id="@+id/llMainMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/bg_text_rule"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLogoComposition">
 
+                <Button
+                    android:id="@+id/btnChooseLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:drawable/dialog_holo_dark_frame"
+                    android:backgroundTintMode="multiply"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/fry_pro"
+                    android:padding="16dp"
+                    android:text="Попробовать свои силы!"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_game_rules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:drawable/dialog_holo_dark_frame"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/fry_pro"
+                    android:padding="16dp"
+                    android:text="Правила игры"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
 
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="224dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pngwing" />
 
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

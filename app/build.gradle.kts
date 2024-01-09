@@ -10,7 +10,7 @@ android {
     namespace = "com.example.numbercomposition"
     compileSdk = 34
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
 
     defaultConfig {

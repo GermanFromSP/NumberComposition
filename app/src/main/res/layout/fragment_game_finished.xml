@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="gameResult"
+            type="com.example.numbercomposition.domain.entity.GameResult" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/floral_white">
@@ -90,18 +96,18 @@
         style="@style/TvLeftBorders"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="@string/users_right_answers"
         app:layout_constraintBottom_toTopOf="@id/tv_users_percent_answers"
         app:layout_constraintEnd_toStartOf="@id/tv_min_right_answers"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_result" />
+        app:layout_constraintTop_toBottomOf="@id/tv_result"
+        android:text="@{gameResult.countOfRightAnswersString}" />
 
     <TextView
         android:id="@+id/tv_min_right_answers"
         style="@style/TvRightBorders"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="@string/min_right_answers"
+        android:text="@{gameResult.gameSettings.minCountOfRightAnswersString}"
         app:layout_constraintBottom_toBottomOf="@id/tv_users_answers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_users_answers"
@@ -123,7 +129,7 @@
         style="@style/TvRightBorders"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="@string/min_right_answers"
+        android:text="@{gameResult.gameSettings.minPercentOfRightAnswersString}"
         app:layout_constraintBottom_toBottomOf="@id/tv_users_percent_answers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_users_percent_answers"
@@ -159,3 +165,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
